@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="../login/join.php">로그인</a></li>
                     <li><a href="../board/board.php">게시판</a></li>
-                    <li><a href="#">로그아웃</a></li>
+                    <li><a href="../blog/blog.php">블로그</a></li>
                     <li><a href="#">연락처</a></li>
                 </ul>
             </nav>

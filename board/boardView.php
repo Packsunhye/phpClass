@@ -43,21 +43,20 @@
 <?php
     $myBoardID = $_GET['myBoardID'];
 
+    //보드뷰 + 1(업데이트)
+    $sql = "UPDATE myBoard SET boardView = boardView + 1 WHERE myBoardID = {$myBoardID}";
+    $connect -> query($sql);
+  
     // echo $myBoardID;
-
     $sql = "SELECT b.boardTitle, m.youName, b.regTime, b.boardView, b.boardContents FROM myBoard b JOIN myMember m ON(m.myMemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
     $result = $connect -> query($sql);
+
 
     if($result){
        $info = $result -> fetch_array(MYSQLI_ASSOC);
     //    echo "<pre>";
     //    var_dump($info);
     //    echo "</pre>";
-    
-    //보드뷰 + 1(업데이트)
-    $sql = "UPDATE myBoard SET boardView = boardView + 1 WHERE myBoardID = {$myBoardID}";
-    $connect -> query($sql);
-
         echo "<tr><th>제목</th><td>".$info['boardTitle']."</td></tr>";
         echo "<tr><th>등록자</th><td>".$info['youName']."</td></tr>";
         echo "<tr><th>등록일</th><td>".date('Y-m-d H:i',$info['regTime'])."</td></tr>";
@@ -112,7 +111,7 @@
                             L 다음 또 O 다음 난 yeah You and I<br>
                             It's more than 'LIKE' What's after 'LIKE'? What's after 'LIKE'?<br><br>
 
-                            What after like 내 맘에 strike 지금 느낀 짜릿함은 마치 tike<br>
+                            What after like 내 맘에 strike 지금 느낀 짜릿함은 마치 tike<br> 
                             LO 다음에 I 그 다음에 VE 여긴 너와 내 space 아무도 막지 못해<br>
                             나를 보면 눈 깜빡할 시간 조차도 아까울 걸<br>
                             드디어 만나 반가워 LOVE 사이 놓일 I (What's after 'LIKE'?)<br><br>

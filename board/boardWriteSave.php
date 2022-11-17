@@ -14,7 +14,7 @@
 
     $sql = "INSERT INTO myboard(myMemberID, boardTitle, boardContents, boardView, regTime) VALUES('$myMemberID','$boardTitle', '$boardContents', '$boardView', '$regTime')";
 
-    $connect -> query($sql);
+    $connect -> query($sql);    
 ?>
 
 <script>

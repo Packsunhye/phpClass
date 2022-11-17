@@ -35,10 +35,38 @@
                 </div>
                 <div class="board__search">
                     <div class="left">
-                        🐏 총 <em>1111</em>건의 게시물이 등록되어 있습니다.
+                        <!-- 🐏 총 <em>1111</em>건의 게시물이 등록되어 있습니다. -->
+                         <!-- 몇 개 & 몇 페이지 -->
+<?php
+    //  function msg($left){
+    //     echo "🐏총 <em>".$left."</em>건이 검색되었습니다. :3";
+    // }
+    
+    // $sql = "SELECT b.myBoardID, b.boardTitle, m.youName, b.regTime, b.boardView FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) ORDER BY myBoardID";
+    // $result = $connect -> query($sql);
+
+    // if($result){
+    //     $count = $result -> num_rows;
+    //     msg($count);
+    // }
+
+
+    $sql = "SELECT count(myBoardID) FROM myBoard";
+    $result = $connect -> query($sql);
+    $boardCount = $result -> fetch_array(MYSQLI_ASSOC);
+    $boardCount = $boardCount['count(myBoardID)'];
+    
+    if(isset($_GET['page'])){
+        $page = (int)$_GET['page'];
+        } else {
+            $page = 1;
+        }
+    echo "🐏 총 <em>{$boardCount}</em>건의 게시물이 등록되어 있습니다. :3 <br>";
+    echo "🐏 현재페이지 <em>{$page}</em>페이지 입니다. :3 ";
+?>
                     </div>
                     <div class="right">
-                        <form action="boardSearch.php" name="boardSearch" method="get">
+                        <form action="boardSearch.php" name="boardSearch" method="get"> 
                             <fieldset>
                                 <legend>게시판 검색 영역</legend>
                                 <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요 :3" aria-label="search" required>
@@ -92,12 +120,13 @@
     // 21~40 : 2page = DESC 20, 20 = ($viewNum * 2) - $viewNum
     // 41~60 : 3page = DESC 40, 20 = ($viewNum * 3) - $viewNum
     // 61~80 : 4page = DESC 60, 20 = ($viewNum * 4) - $viewNum
-    // 두개의 테이블 join
+    // 두개의 테이블 <join></join>
 
     $sql = "SELECT b.myBoardID, b.boardTitle, m.youName, b.regTime, b.boardView FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
     $result = $connect -> query($sql);
+
     if($result){
-        $count = $result -> num_rows;
+        $count = $result -> num_rows;   
         if($count > 0){
             for($i=1; $i <= $count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
@@ -109,6 +138,8 @@
                 echo "<td>".$info['boardView']."</td>";
                 echo "</tr>";
             }
+        }else {
+            echo "<tr><td colspan = '5'>게시판이 없습니다 ;< </td></tr>";
         }
     }
     

@@ -113,3 +113,49 @@
         bottom: -7px;
     }
 }
+
+@mixin border_top {
+    border-top: 3px solid $black;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        top: 4px;
+    }
+}
+
+//한줄 효과
+@mixin row {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//두줄 효과
+@mixin row2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+//두줄 효과
+@mixin row3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+//두줄 효과
+@mixin row4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
