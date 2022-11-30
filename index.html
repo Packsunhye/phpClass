@@ -1,75 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    @font-face {
-        font-family: 'GmarketSans';
-        font-weight: 500;
-        font-style: normal;
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-             url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-             url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-             url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-        font-display: swap;
-    } 
-   
-
-        body {
-            font-family: 'GmarketSans';
-            font-size: 24px;
-            font-weight: 500;
+        a {
+            color: #000;
             text-decoration: none;
-            background-color: #fff;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .box {
+            padding: 5%;
+            min-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box h1 {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .box>div {
+            width: 50%;
         }
     </style>
 </head>
+
 <body>
-    <h2>html</h2>
-    메인 페이지 : <a href="html/main.html" target="_blank">main.html</a>  <br>
-    회원가입 동의 페이지 : <a href="html/joinAgree.html" target="_blank">joinAgree.html</a>  <br>
-    회원가입 페이지 : <a href="html/join.html" target="_blank">join.html</a>  <br>
-    회원가입 완료 페이지 : <a href="html/joinResult.html" target="_blank">joinResult.html</a>  <br>
+    <div class="box">
+        <h1>PHP 프로젝트</h1>
+        <div>
+            <h2>HTML</h2>
+            <ul>
+                <li><a href="html/main.html">메인페이지</a></li>
+                <li><a href="html/join.html">회원가입</a></li>
+                <li><a href="html/join2.html">회원가입2</a></li>
+                <li><a href="html/join2.html">회원가입 정보 페이지</a></li>
+                <li><a href="html/joinInfo.html">회원가입 동의 페이지</a></li>
+                <li><a href="html/joinResult.html">회원가입 결과 페이지</a></li>
+                <br>
+                <li><a href="html/login.html">로그인</a></li>
+                <br>
+                <li><a href="html/board.html">게시판 페이지</a></li>
+                <li><a href="html/boardModify.html">게시판 수정 페이지</a></li>
+                <li><a href="html/boardSearch.html">게시판 결과 페이지</a></li>
+                <li><a href="html/boardView.html">게시판 보기 페이지</a></li>
+                <li><a href="html/boardWrite.html">게시판 쓰기 페이지</a></li>
+                <br>
+                <li><a href="html/blog.html">블로그 페이지</a></li>
+                <li><a href="html/blogCate.html">블로그 카테고리 페이지</a></li>
+                <li><a href="html/blogModify.html">블로그 수정 페이지</a></li>
+                <li><a href="html/blogModify.html">블로그 뷰 페이지</a></li>
+                <li><a href="html/blogWrite.html">블로그 쓰기 페이지</a></li>
+                <br><br><br>
+                <li><a href="html/blogWrite.html">블로그 댓글 페이지</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>PHP</h2>
+            <ul>
+                <li><a href="main/main.php" target="_blank">메인 페이지</a></li>
+                <li><a href="http://tjsgp9810.dothome.co.kr/myadmin" target="_blank">myadmin</a></li>
+                <br />
+                <li><a href="create/createBoard.php" target="_blank">게시판 테이블 만들기</a></li>
+                <li><a href="create/createBlog.php" target="_blank">블로그 테이블 만들기</a></li>
+                <li><a href="create/createMember.php" target="_blank">회원 테이블 만들기</a></li>
+                <li><a href="create/createComment.php" target="_blank">댓글 테이블 만들기</a></li>
+                <br />
+                <li><a href="join/join.php" target="_blank">회원가입 페이지</a></li>
+                <br />
+                <li><a href="login/login.php" target="_blank">로그인 페이지</a></li>
 
-    <br><br>
-    <h2>PHP</h2>
-    MyAdmin 페이지 : <a href="http://localhost/phpMyAdmin/index.php" target="_blank">phpMyAdmin.php</a><br>
-    DB 접속 페이지 : <a href="connect/connect.php">connect.php</a><br>
-    메인 페이지 : <a href="main/main.php">main.php</a><br><br>
-
-    <br><br>
-    <h2>blog</h2>
-    blog 페이지 : <a href="blog/blog.php" target="_blank">blog.php</a><br>
-    blog 글쓰기 페이지 : <a href="blog/blogWrite.php" target="_blank">blogWrite.php</a><br>
-    blog 보기 페이지 : <a href="blog/blogView.php" target="_blank">blogView.php</a><br>
-    blog 검색 페이지 : <a href="blog/blogSearch.php" target="_blank">blogSearch.php</a><br>
-    blog 검색 페이지 : <a href="blog/blogCategory.php" target="_blank">Category.php</a><br>
-    blog 검색 페이지 : <a href="create/creatComment.php" target="_blank">코멘트 테이블 만들기</a><br>
-
-    <h2>회원가입</h2>
-    관리자 회원가입 : <a href="admin/adminJoin.php">adminJoin.php</a><br><br>
-
-    myBlog 테이블 만들기 : <a href="create/createBlog.php">myBlog.php</a><br>
-    AdminMyMember 테이블 만들기 : <a href="create/createAdminMember.php">AdminMyMember.php</a><br>
-    myMember 테이블 만들기 : <a href="create/createMember.php">createMember.php</a>
-
-    <br><br>
-    <h2>게시판</h2>
-    게시판 페이지 : <a href="board/board.php" target="_blank">board.html</a>  <br>
-    게시판 수정 페이지 : <a href="board/boardModifiy.php" target="_blank">boardModifiy.html</a>  <br>
-    게시판 보기 페이지 : <a href="board/boardView.php" target="_blank">boardView.html</a>  <br>
-    게시판 쓰기 페이지 : <a href="board/boardWrite.php" target="_blank">boardWrite.html</a>  <br>
-    게시판 서치 페이지 : <a href="board/boardSearch.php" target="_blank">boardSearch.html</a>  <br>
-
-    <br><br>
-    <h2>게시판 PHP</h2>
-    myBoard 테이블 만들기 : <a href="create/createBoard.php">createBoard.php</a>
-
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>

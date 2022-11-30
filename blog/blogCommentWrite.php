@@ -1,17 +1,15 @@
 <?php
-
     include "../connect/connect.php";
 
-    // 받아올 값(POST 방식)
-    $myBlogID = $_POST['blogID'];
-    $commentName = $_POST['name'];
-    $commentPass = $_POST['pass'];
-    $commentMsg = $_POST['msg'];
+    $BlogID = $_POST['blogID'];
+    $commentName = $_POST["name"];
+    $commentPass = $_POST["pass"];
+    $commentMsg = $_POST["msg"];
     $regTime = time();
 
-    $sql = "INSERT INTO mycomment(myMemberID, myBlogID, commentName, commentMsg, commentPass, commentDelete, regTime) VALUES ('1','$myBlogID','$commentName','$commentMsg','$commentPass','0','$regTime')";
-   
-    // 데이터 가져옴
+    $sql = "INSERT INTO mycomment (MemberID, BlogID, commentName, commentMsg, commentPass, commentDelete, regTime) VALUES ('1','$BlogID','$commentName','$commentMsg','$commentPass','0','$regTime')";
     $result = $connect -> query($sql);
-    echo json_encode(array("info" => $myBlogID));
+
+    echo json_encode(array("info" => $BlogID));
+
 ?>

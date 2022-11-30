@@ -3,14 +3,14 @@
     include "../connect/session.php";
     include "../connect/sessionCheck.php";
 
-    $myBoardID = $_GET['myBoardID'];
-    $myBoardID = $connect -> real_escape_string($myBoardID);
+    $BoardID = $_GET['BoardID'];
+    $BoardID = $connect -> real_escape_string($BoardID);
 
-    $sql = "DELETE FROM myBoard WHERE myBoardID = {$myBoardID}";
+
+    $sql = "DELETE FROM myBoard WHERE BoardID = {$BoardID}";
     $connect -> query($sql);
-    
 ?>
 
 <script>
-        location.href = "board.php";
+    location.href="board.php";
 </script>

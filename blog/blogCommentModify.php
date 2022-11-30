@@ -1,14 +1,17 @@
 <?php
     include "../connect/connect.php";
 
-    // 받아올 값(POST 방식)
-    $commentMsg = $_POST['msg'];
     $commentPass = $_POST['pass'];
-    $commentID = $_POST['commentID'];
+    $commentmsg = $_POST["commentmsg"];
+    $commentID = $_POST["commentID"];
 
-    $sql = "UPDATE myComment SET commentMsg = '{$commentMsg}', commentPass= '{$commentPass}' WHERE myCommentID = '{$commentID}'";
-   
-    // 데이터 가져옴
+    
+
+    $sql = "UPDATE mycomment SET commentMsg = '{$commentmsg}' WHERE CommentID = {$commentID} AND commentPass = {$commentPass}";
     $result = $connect -> query($sql);
-    echo json_encode(array("info" => $commentID));
+
+    echo json_encode(array("info" => $sql));
+
+
+
 ?>

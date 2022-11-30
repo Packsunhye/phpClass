@@ -1,13 +1,13 @@
 <?php
     include "../connect/connect.php";
 
-    // 받아올 값(POST 방식)
     $commentPass = $_POST['pass'];
-    $commentID = $_POST['commentID'];
+    $commentID = $_POST["commentID"];
 
-    $sql = "DELETE FROM myComment WHERE myCommentID = {$commentID}";
-   
-    // 데이터 가져옴
+    $sql = "DELETE FROM mycomment WHERE CommentID = {$commentID}";
     $result = $connect -> query($sql);
-    echo json_encode(array("info" => $commentID));
+
+    echo json_encode(array("info" => $sql));
+
+
 ?>
